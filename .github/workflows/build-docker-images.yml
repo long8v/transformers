@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - docker-image*
+      - test-tokenizers-*
   repository_dispatch:
   workflow_call:
     inputs:
@@ -42,7 +43,7 @@ jobs:
           build-args: |
             REF=main
           push: true
-          tags: huggingface/transformers-all-latest-gpu${{ inputs.image_postfix }}
+          tags: huggingface/transformers-all-latest-gpu-tokenizers-main
 
   latest-with-torch-nightly-docker:
     name: "Nightly PyTorch + Stable TensorFlow"
@@ -179,7 +180,7 @@ jobs:
           build-args: |
             REF=main
           push: true
-          tags: huggingface/transformers-pytorch-gpu
+          tags: huggingface/internal-transformers-pytorch-gpu-tokenizers-main
 
   latest-tensorflow:
     name: "Latest TensorFlow [dev]"
@@ -207,4 +208,4 @@ jobs:
           build-args: |
             REF=main
           push: true
-          tags: huggingface/transformers-tensorflow-gpu
+          tags: huggingface/internal-transformers-tensorflow-gpu-tokenizers-main
