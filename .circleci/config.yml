@@ -27,7 +27,7 @@ jobs:
                 fi
             - run: |
                 mkdir configs
-                cp .circle_ci/config_test.yml configs/
+                cp .circleci/config_test.yml configs/
 
             - persist_to_workspace:
                 root: test_preparation/
