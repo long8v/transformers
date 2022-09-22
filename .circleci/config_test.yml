@@ -20,7 +20,7 @@ jobs:
 
 workflows:
     version: 2
-    setup-workflow:
+    build_and_test:
         jobs:
             - run_tests
     

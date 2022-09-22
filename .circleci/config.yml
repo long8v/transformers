@@ -28,11 +28,13 @@ jobs:
             - run: |
                 mkdir configs
                 cp .circleci/config_test.yml configs/
-
             - persist_to_workspace:
                 root: test_preparation/
                 paths:
                     test_list.txt
+            - continuation/continue:
+                configuration_path: configs/config_test.yml
+                
 
 workflows:
     version: 2
